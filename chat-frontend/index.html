@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Chat Regional</title>
+  <link rel="stylesheet" href="assets/bootstrap.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css.css?v=1.0.0">
+  <script src="assets/jquery.min.js?v=1.0.0"></script>
+  <script src="assets/bootstrap.js?v=1.0.0"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="assets/socket.io.js?v=1.0.0"></script>
+  <script src="assets/controller.js?v=1.0.0"></script>
+  <script src="assets/controllerIo.js?v=1.0.0"></script>
+</head>
+<body>
+
+
+
+<div class="entrada container-fluid fill-height" id="nick" ng-app="chatApp" ng-controller="chatController" >
+
+  <form name="formLogin" id="submit">
+
+
+    <center class="logo"><img src="assets/icon.png?v=1.1.1" width="80%" /></center>
+
+    <div class="panel painel-login">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Selecione sua cidade</p>
+          <select class="form-control" id="sala" required>
+              <option value="" selected>-- Grupo --</option>
+              <option ng-repeat="sala in salas | orderBy: 'nome'"   value="{{sala.id}}">{{sala.nome}}</option>
+          </select>
+          </div>
+          <p> </p>
+          <div class="col-md-12">
+            <p>Seu apelido</p>
+            <input class="form-control" type="text" name="nickname" id="nickname" required ng-maxlength="10" maxlength="10" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+<div id="chat" class="container-fluid fill-height" style="margin-bottom: 60px;" hidden>
+
+  <div class="menu row-fluid">
+      <div class="col-md-12">
+        <img src="./assets/icon-small.png?v=1.1.45" width="60px" align="left" style="margin-right: 5px" />
+        <span class="name" id="name">Alex</span>
+        <p class="last" id="time">Entrou em: 18:09</p>
+      </div>
+  </div>
+
+
+  <ul class="chat fill-height"></ul>
+
+  <footer class="footer">
+      <div class="container">
+            <input autofocus class="form-control pull-left" type="text" placeholder="Escreva sua mensagem!" id="textarea" />
+      </div>
+    </footer>
+
+</div>
+</body>
+</html>

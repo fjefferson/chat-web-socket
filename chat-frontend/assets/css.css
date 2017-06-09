@@ -1,0 +1,135 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+html, body {
+    background: #DEDEDE;
+    font-family: 'Lato', sans-serif;
+    margin: 0px auto;
+    padding: 0px;
+    height: 100%;
+}
+.fill-height {
+    min-height: 100%;
+    height:auto !important; 
+    height: 100%; 
+}
+
+.chat{
+    padding-top: 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #F0F0F0;
+  position: fixed;
+}
+
+.entrada{
+    background: #F36C44;
+}
+
+.logo{ padding-top: 60px;  }
+
+.painel-login{
+    padding: 5px;
+    color: #FFF;
+    width: 90%;
+    background: #E25b33;
+    margin: 0 auto;
+    border: solid 2px #D14A22;
+    margin-top: 20%;
+}
+
+.menu{
+    background: #E25b33;
+    color: #fff;
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+}
+.menu .name{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu .last{
+    font-size: 12px;
+} 
+
+
+.other:before {
+    content: "";
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 40px;
+    width: 0px;
+    height: 0px;
+}
+
+.chat{
+ list-style: none;
+ padding: 0px;
+ padding-top: 60px; 
+}
+
+.chat li {
+    min-width: 100px;
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex
+}
+
+
+
+.chat .self {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.msg{
+    border-radius: 15px;
+    padding: 10px;
+    min-width: 100px;
+}
+
+.chat .self .msg {
+    padding: 5px 15px;
+    order: 1;
+    border-bottom-right-radius: 0px;
+    box-shadow: 1px 2px 0px #D4D4D4;
+    background: #DCF8C7;
+}
+
+.chat .msg span {
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+
+.chat .other .msg {
+    order: 1;
+    border-bottom-left-radius: 0px;
+    box-shadow: 1px 2px 0px #D4D4D4;
+    background: #F0F0F0;
+}
+
+
+
+/*forms*/
+#textarea{
+    margin-top: 8px;
+    padding: 10px;
+    height: 45px;
+}
+
+.info{
+    padding: 10px;   
+}
+
