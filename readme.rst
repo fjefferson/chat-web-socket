@@ -1,4 +1,5 @@
 # (Chat online via Socket)
+--------------------
 
 Tecnologias do chat:
 
