@@ -7,25 +7,24 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Chat Regional</title>
   <link rel="stylesheet" href="assets/bootstrap.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/bootstrap-theme.min.css?v=1.0.0">
   <link rel="stylesheet" href="assets/css.css?v=1.0.0">
   <script src="assets/jquery.min.js?v=1.0.0"></script>
   <script src="assets/bootstrap.js?v=1.0.0"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="assets/angular.min.js?v=1.6.4"></script>
   <script src="assets/socket.io.js?v=1.0.0"></script>
   <script src="assets/controller.js?v=1.0.0"></script>
   <script src="assets/controllerIo.js?v=1.0.0"></script>
 </head>
 <body>
+<span ng-app="chatApp" ng-controller="chatController" class="container-fluid fill-height">
 
+<div class="entrada container-fluid fill-height" id="nick">
 
-
-<div class="entrada container-fluid fill-height" id="nick" ng-app="chatApp" ng-controller="chatController" >
+  
 
   <form name="formLogin" id="submit">
-
-
     <center class="logo"><img src="assets/icon.png?v=1.1.1" width="80%" /></center>
-
     <div class="panel painel-login">
       <div class="panel-body">
         <div class="row">
@@ -49,15 +48,30 @@
 </div>
 
 
-<div id="chat" class="container-fluid fill-height" style="margin-bottom: 60px;" hidden>
+<div id="chat" class="container-fluid fill-height main" style="margin-bottom: 60px;" hidden>
+
+  <div id="listaDeUsuarios" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="fechaUsuarioLista()">&times;</a>
+    <h3>Região <b class="regiaoNome"></b></h3>
+    <p>Lista de usuário</p>
+    <ul id="listUsuario">
+      <li ng-repeat="user in usuarios">{{user.usuario}}</li>
+    </ul>
+  </div>
+
 
   <div class="menu row-fluid">
       <div class="col-md-12">
         <img src="./assets/icon-small.png?v=1.1.45" width="60px" align="left" style="margin-right: 5px" />
+        <span onclick="abreUSuarioLista()" ng-click="listaUser()" class="btn btn-info pull-right" style="margin-top: 10px; margin-right: -10px">
+          <i class="glyphicon glyphicon-user"></i>
+          <i class="userCount">10</i>
+        </span>
         <span class="name" id="name">Alex</span>
         <p class="last" id="time">Entrou em: 18:09</p>
       </div>
   </div>
+  
 
 
   <ul class="chat fill-height"></ul>
@@ -69,5 +83,7 @@
     </footer>
 
 </div>
+
+</span>
 </body>
 </html>
