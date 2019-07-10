@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
+var roms = [{ "id": 1, "nome": "Fortaleza" }, { "id": 2, "nome": "São Paulo" }, { "id": 3, "nome": "Rio de Janeio" }, { "id": 4, "nome": "Natal" }, { "id": 5, "nome": "Bahia" }, { "id": 6, "nome": "Belo Horizonte" },{"id":6,"nome":"Florianópolis"}]
 
 var clients = {};
 var clientsByRegiao = [];
@@ -30,7 +30,6 @@ app.get('/user/:idRegiao',(r,s)=>{
 });
 
 app.get('/chat-rom', (req, res) => {
-    var roms = [{ "id": 1, "nome": "Fortaleza" }, { "id": 2, "nome": "São Paulo" }, { "id": 3, "nome": "Rio de Janeio" }, { "id": 4, "nome": "Natal" }, { "id": 5, "nome": "Bahia" }, { "id": 6, "nome": "Belo Horizonte" },{"id":6,"nome":"Florianópolis"}]
     if (clientsByRegiao.length == 0) {
         roms.forEach((e)=>{
             clientsByRegiao.push({"idRegiao": e.id,"regiao": e.nome,"users":[]});    
